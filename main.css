@@ -8,9 +8,21 @@
  *  Version 1.0 - 11/21/14
 **/
 
+
+/*
+    McKesson blue: rgb(40,73,105)
+    McKesson orange:  rgb(239,88,33)
+    base green: rgb(140,190,93)
+    base red: rgb(125,0,0)
+    base yellow: rgb(248,205,50)
+*/
+
+
 /**
  * Base rules
- */
+**/
+
+
 body {
     font-family: 'open_sansregular', arial, sans-serif;
     font-weight: 400;
@@ -74,9 +86,11 @@ hr {
     border-bottom: 1px solid;
 }
 
+
+
 /**
  * Layout rules
- */
+**/
 
 .flexbox {
     display: -webkit-box;
@@ -133,7 +147,7 @@ main {
 
 /**
  * Module rules
-*/
+**/
 
 .site-banner {
     width: 100%;
@@ -305,9 +319,10 @@ code.callout {
 }
 
 
+
 /**
  *  State rules
-*/
+**/
 
 .is-disabled {
     color: rgba(0,0,0,.25);
