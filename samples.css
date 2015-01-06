@@ -1,0 +1,217 @@
+﻿/**
+ *  samples.css
+ *  Example css snippets for 
+ *    Enterprise CSS presentation
+ *  
+ *  Authored by Tony Miller
+ *  
+ *  Version 1.0 - 01/01/2015
+ **/
+
+
+/**
+ *   Specificity
+ **/
+
+h1 {
+    /*  (0,0,0,1) */
+}
+
+div h1 {
+    /*  (0,0,0,2) */
+}
+
+h1::after {
+    /*  (0,0,0,2) */
+}
+
+.text-link {
+    /*  (0,0,1,0) */
+}
+
+h1 .text-link {
+    /*  (0,0,1,1) */
+}
+
+.text-link:hover {
+    /*  (0,0,2,0) */
+}
+
+.site-nav .is-current {
+    /*  (0,0,2,0) */
+}
+
+#header {
+    /*  (0,1,0,0) */
+}
+
+
+/* Specificty Hacks - only if no other choice */
+
+/* HTML snippet
+    <button id="button1" class="btn">Hi</button>
+*/
+
+.btn.btn{
+    /*  (0,0,2,0) */
+}
+
+[id="button1"]{    
+    /*  (0,0,1,0) */
+}
+
+
+
+
+/**
+ *   SoC
+ **/
+
+/* HTML snippet
+    <div class="grid grid--columnar">
+        <div class="grid__item">
+            <p>Content</p>
+        </div>
+        <div class="grid__item">
+            <p>Content</p>
+        </div>
+    </div>
+*/
+
+/**
+ *   SRP, COI, DRY
+ **/
+
+/* Before decomposition */
+    .alert-message {
+        display: block;
+        padding: 1em;
+        background-color: #ffffee;
+        color: #333;
+        border-radius: 3px;
+        border: 1px solid #eeeecc;
+    }
+    .code-block {
+        display: block;
+        padding: 1em;
+        background-color: #333;
+        color: #f2f2f2;        
+        border-radius: 3px;
+    }
+
+/* After decomposition  */
+    .box {
+        display: block;
+        padding: 1em;
+        border-radius: 3px;
+    }
+    .callout {
+        background-color: #eee;
+        color: #333;
+        border: 1px solid #ccc;
+    }
+    .callout--alert {
+        background-color: #ffffee;
+        border-color: #eeeecc;
+    }
+    .code-snippet {
+        font-family: monospace;
+        background-color: #333;
+        color: #f2f2f2;
+    }
+    
+ 
+/**
+ *   Encapsulation
+ **/  
+
+/* Good */
+    .callout__heading {} 
+
+/* Not so good */
+    .callout > .heading {}
+
+/* Bad */
+    .callout .heading {}
+
+/* Really Bad */
+    div.callout h1 {}
+
+
+/**
+ *   OOCSS
+ **/  
+
+/* HTML snippet
+    <div class="media island">
+        <a class="media__img avatar" href=""><img src="" /></a>
+        <div class="media__body">
+            <p class="hot-text">Content</p>
+        </div>
+        <a class="media__img--extra" href=""><img src="" /></a>
+    </div>
+*/
+
+    .media {
+        display: block;
+        padding: 1em;
+    }
+
+    .media__img {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .media__body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .media__img--extra {
+        float: right;
+        margin-left: 10px;
+    }
+    
+
+    .island {
+        box-shadow: 0 2px 4px 1px rgba(0,0,0,0.3);
+    }
+
+    .avatar {
+        border: 2px solid green;
+        border-radius: 50%;
+    }
+
+    .hot-text {
+        color: deeppink;
+    }
+
+
+
+/**
+ *   BEM
+ **/ 
+
+/* HTML snippet
+    <div class="vehicle">
+        <div class="vehicle__engine"></div>
+        <div class="driver"></div>
+    </div>
+    <div class="vehicle vehicle--truck">
+        <div class="vehicle__engine"></div>
+        <div class="human human--child"></div>
+        <div class="human driver"></div>
+    </div>
+*/
+
+.vehicle {}
+
+.vehicle__engine {}
+
+.vehicle--truck  {}
+
+.human {}
+
+.human--child {}
+
+.driver {}
