@@ -1,0 +1,339 @@
+﻿/**
+ *  main.css
+ *  Main styles for 
+ *    McKesson Springfield Product Group Web Style Guide
+ *  
+ *  Authored by Tony Miller
+ *  
+ *  Version 1.0 - 11/21/14
+**/
+
+/**
+ * Base rules
+ */
+body {
+    font-family: 'open_sansregular', arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #005a8c;
+}
+
+h1 {
+    font-family: 'open_sanslight', arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'open_sanslight', arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: 'open_sansregular', arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-family: 'open_sansbold', arial, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+h5 {
+    font-family: 'open_sans_condensed_bold', arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+/*  HR used as visual section divider   */
+hr {
+    border: none;
+    border-top: 5px solid rgba(0,90,140,0.25);
+    margin: 2rem 0;
+}
+
+/*  Abstracting text link behavior to enable application to non-anchor elements  */
+.text-link {
+    color: #f58025;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    border-bottom: 1px solid;
+}
+
+/**
+ * Layout rules
+ */
+
+.flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flexbox--dir-col {
+        -webkit-box-orient: vertical;
+           -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+.flexbox--align-items-end {
+      -webkit-box-align: end;
+         -moz-box-align: end;
+    -webkit-align-items: flex-end;
+         -ms-flex-align: end;
+            align-items: flex-end;
+}
+
+/*  These rules leave room for fixed header when jumping to anchor  */
+h2[id], h3[id], h4[id] {
+    padding-top: 118px;
+    margin-top: -92px;
+}
+
+.reading-width {
+    max-width: 48rem;
+}
+
+/*  .page is the top level page container  */
+.page {
+
+    min-height: 100vh;
+    padding-left: 20rem;
+}
+
+main {
+    -webkit-box-flex: 1;
+       -moz-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+
+    padding: 2rem 3rem;
+}
+
+
+
+/**
+ * Module rules
+*/
+
+.site-banner {
+    width: 100%;
+    height: 246px;
+    padding: 0 3rem;
+}
+
+.site-footer {
+    padding: 1rem 3rem;
+}
+
+.site-banner, .site-footer {
+    background-color: #005a8c;
+    color: white;
+}
+
+
+.page-header {
+    width: 100%;
+    padding: 1.5rem 0;
+}
+
+.page-header__title {
+     margin: 0;
+    padding: 0;
+
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+
+    color: white;
+}
+
+.page-header__subtitle {
+    margin: 1em 0;
+    color: rgba(255,255,255,.67);
+}
+
+
+.site-nav {
+    position: fixed;
+     right: 2rem;
+       top: 1em;
+    height: 80px;
+
+    z-index: 100;
+}
+
+.site-nav__item {
+    display: inline-block;
+
+    line-height: 1em;
+    padding: 1em;
+    text-decoration: none;
+    color: rgba(255,255,255,.67);
+
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s; 
+}
+
+.site-nav .is-current {
+    background-color: rgba(255,255,255,.25);
+    color: white;
+}
+
+.site-nav .is-disabled {
+    color: rgba(255,255,255,.25);
+}
+
+.site-nav__item:not(.is-disabled):hover {
+    color: rgba(255,255,255,1);
+    background-color: rgba(0,0,0,.25);
+}
+
+/*  .toc = Table of Contents, which is section specific outline/nav  */
+.toc {
+    position: fixed;
+      top: 0;
+     left: 0;
+    width: 20rem;
+    height: 100vh;
+
+    padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background-color: #f3f3f3;
+    box-shadow: 0 6px 1px rgba(0,0,0,.3);
+}
+
+.toc__list {
+    list-style-type: none;
+
+    margin: 0;
+    padding: .5em 0 0 1em;
+}
+
+.toc > .toc__list {
+    padding-left: 0;
+}
+
+.toc__list__item:not(:last-child) {
+    padding-bottom: .5em;
+}
+
+.toc__link {
+    color: rgba(0,0,0,.67);
+    text-decoration: none;
+}
+
+.toc__link:hover {
+    color: rgba(0,0,0,1);
+}
+
+
+.box {
+    display: block;
+    padding: 1em;
+    border-radius: 3px;
+}
+
+
+.island {
+    box-shadow: 0 2px 4px 1px rgba(0,0,0,0.3);
+}
+
+
+.callout {
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.callout--alert {
+    background-color: #ffffee;
+    border-color: #eeeecc;
+}
+
+.callout--todo {
+    background-color: #ccffcc;
+    border-color: #aaddaa;
+}
+
+.callout--warning {
+    background-color: #ffcccc;
+    border-color: #ddaaaa;
+}
+
+/*  .inline-callout should probably be callout--inline  */
+.inline-callout {
+    display: inline-block;
+
+    padding: 0 4px;
+    border: none;
+    border-radius: 2px;
+}
+
+code.callout {
+    color: #4488dd;
+}
+
+
+.code-snippet {
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+
+/**
+ *  State rules
+*/
+
+.is-disabled {
+    color: rgba(0,0,0,.25);
+}
+
+.shrink .page-header__subtitle {
+    display: none;
+}
+
+.shrink .page-header__title {
+    font-size: 1.5rem;
+}
+
+.shrink .page-header {
+    position: fixed;
+    top: 0;
+}
+
+.scrolling main {
+    padding-top: 280px;
+}
+
+.scrolling .site-banner {
+    position: fixed;
+    height: 80px;
+
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+
